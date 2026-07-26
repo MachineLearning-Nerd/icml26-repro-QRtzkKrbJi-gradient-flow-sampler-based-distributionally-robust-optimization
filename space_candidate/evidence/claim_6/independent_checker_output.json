@@ -1,0 +1,10 @@
+{
+  "case_count": 4,
+  "exit_code": 0,
+  "max_identity_residual": 4.440892098500626e-16,
+  "max_mass_error": 2.220446049250313e-16,
+  "max_raw_generator_delta": 2.4369395390522186e-13,
+  "minimum_perturbation_objective_gap": 0.0002418403153532367,
+  "minimum_proposal_kl": 0.15685996871016503,
+  "status": "PASS"
+}

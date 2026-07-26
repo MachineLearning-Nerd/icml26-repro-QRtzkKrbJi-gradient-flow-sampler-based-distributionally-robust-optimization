@@ -1,0 +1,7 @@
+{
+  "exit_code": 1,
+  "mutation": "replace exp(-A/a) by exp(-A/(2a))",
+  "reason": "Euler-Lagrange derivative is not constant in y",
+  "stationarity_span": 10.02857142857143,
+  "status": "REJECTED_AS_EXPECTED"
+}

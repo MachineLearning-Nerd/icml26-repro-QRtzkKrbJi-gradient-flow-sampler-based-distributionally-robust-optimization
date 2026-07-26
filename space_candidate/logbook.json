@@ -1,0 +1,124 @@
+{
+  "schema_version": 1,
+  "title": "GFS-DRO exact claim audit",
+  "emoji": "🎯",
+  "space_id": "DineshAI/QRtzkKrbJi",
+  "paper": "https://arxiv.org/abs/2510.25956",
+  "tags": [
+    "icml2026-repro",
+    "paper-QRtzkKrbJi"
+  ],
+  "updated_at": "2026-07-26T16:00:00+05:30",
+  "root": {
+    "slug": "current-index",
+    "title": "Current exact evidence",
+    "file": "pages/current/index.md",
+    "children": [
+      {
+        "slug": "claim-1-current",
+        "title": "Claim 1 — VERIFIED",
+        "file": "pages/current/claims/claim-1.md",
+        "children": []
+      },
+      {
+        "slug": "claim-2-current",
+        "title": "Claim 2 — FALSIFIED",
+        "file": "pages/current/claims/claim-2.md",
+        "children": []
+      },
+      {
+        "slug": "claim-3-current",
+        "title": "Claim 3 — FALSIFIED",
+        "file": "pages/current/claims/claim-3.md",
+        "children": []
+      },
+      {
+        "slug": "claim-4-current",
+        "title": "Claim 4 — BLOCKED",
+        "file": "pages/current/claims/claim-4.md",
+        "children": []
+      },
+      {
+        "slug": "claim-5-current",
+        "title": "Claim 5 — FALSIFIED",
+        "file": "pages/current/claims/claim-5.md",
+        "children": []
+      },
+      {
+        "slug": "claim-6-current",
+        "title": "Claim 6 — VERIFIED",
+        "file": "pages/current/claims/claim-6.md",
+        "children": []
+      },
+      {
+        "slug": "current-verification",
+        "title": "Current cumulative verifier",
+        "file": "pages/current/verification.md",
+        "children": []
+      },
+      {
+        "slug": "visibility-matrix",
+        "title": "Evaluator visibility matrix",
+        "file": "pages/current/visibility.md",
+        "children": []
+      },
+      {
+        "slug": "visual-report",
+        "title": "Visual research report",
+        "file": "pages/current/report.md",
+        "children": []
+      },
+      {
+        "slug": "release-report",
+        "title": "Release forecast and action",
+        "file": "pages/current/release.md",
+        "children": []
+      },
+      {
+        "slug": "red-team-review",
+        "title": "Evaluator-blind review",
+        "file": "pages/current/red-team.md",
+        "children": []
+      },
+      {
+        "slug": "historical-rejected-baseline",
+        "title": "Historical rejected baseline",
+        "file": "pages/current/historical.md",
+        "children": [
+          {
+            "slug": "overview",
+            "title": "Historical rejected baseline — Overview",
+            "file": "pages/overview/page.md",
+            "children": []
+          },
+          {
+            "slug": "claims",
+            "title": "Historical rejected baseline — Claims",
+            "file": "pages/claims/page.md",
+            "children": []
+          },
+          {
+            "slug": "evidence",
+            "title": "Historical rejected baseline — Evidence",
+            "file": "pages/evidence/page.md",
+            "children": []
+          },
+          {
+            "slug": "verification-run",
+            "title": "Historical rejected baseline — Verification run",
+            "file": "pages/verification-run/page.md",
+            "children": []
+          },
+          {
+            "slug": "conclusion",
+            "title": "Historical rejected baseline — Conclusion",
+            "file": "pages/conclusion/page.md",
+            "children": []
+          }
+        ]
+      }
+    ]
+  },
+  "agent_view_tokens": 12000,
+  "revision": "current-exact-evidence-2026-07-26"
+}

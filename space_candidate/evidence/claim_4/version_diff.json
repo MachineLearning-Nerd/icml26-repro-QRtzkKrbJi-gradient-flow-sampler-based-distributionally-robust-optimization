@@ -1,0 +1,17 @@
+{
+  "acknowledgment": "We thank Jie Wang (Wang, 2025) for pointing out a flaw in our original proof of Theorem 5.5, which we have now fixed.",
+  "current": {
+    "arxiv_version": "2510.25956v3",
+    "outer_exponent": 4,
+    "outer_statement_anchor": "Theorem 5.2, pdftotext lines 526-530",
+    "pdf_sha256": "88720453447d8affcefd3e63097c52f512d5b275766ba3e73dff9af2ca1c0f8f",
+    "total_exponent": 6,
+    "total_statement_anchor": "Theorem 5.5, pdftotext lines 552-560"
+  },
+  "judged": {
+    "arxiv_version": "2510.25956v1",
+    "outer_exponent": 2,
+    "pdf_sha256": "796d3cb25e2a9062ab4e81201daa7837c4bf615399063b0ed439c9e17e6db8d6",
+    "total_exponent": 4
+  }
+}

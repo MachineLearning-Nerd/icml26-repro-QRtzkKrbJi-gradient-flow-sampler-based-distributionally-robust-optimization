@@ -1,0 +1,29 @@
+{
+  "claim_id": 3,
+  "contract_version": 1,
+  "paper_contract": {
+    "arxiv_version": "2510.25956v1",
+    "pdf_sha256": "796d3cb25e2a9062ab4e81201daa7837c4bf615399063b0ed439c9e17e6db8d6",
+    "statement_anchor": "Section 5, Theorem 1, PDF page 8, pdftotext line 496",
+    "proof_anchor": "Appendix C.3, PDF pages 17-18, pdftotext lines 1198-1308",
+    "statement": "Under Assumptions 1-3, a constant outer step r=O(1/L_Phi) requires S=O(1/epsilon_opt^2) iterations to find a last-iterate epsilon_opt-stationary point, when delta_sample=O(epsilon_opt/L_f)."
+  },
+  "counterexample": {
+    "data_and_transport": "one datum x=0, squared cost, tau=1, entropy epsilon_ent=2",
+    "loss": "ell(theta,z)=theta^2/2+theta*z",
+    "target": "pi_theta=N(theta,1)",
+    "outer_objective": "Phi(theta)=theta^2+constant, L_Phi=2",
+    "exact_sampler": "z_s=theta_s+xi_s with xi_s~N(0,1), so delta_sample=0",
+    "gradient": "g_s=theta_s+z_s=2theta_s+xi_s, unbiased with variance 1",
+    "update": "theta_(s+1)=(1-2r)theta_s-r xi_s",
+    "initialization": "theta_0=1"
+  },
+  "acceptance_criteria": [
+    "Symbolically derive the Gibbs target, outer objective, exact stochastic-gradient recurrence, and mean-square last iterate.",
+    "Prove that epsilon-stationarity forces r=O(epsilon^2) and then S=Omega(epsilon^-2 log(1/epsilon)).",
+    "Independently integrate the continuous targets and calibrate the minimum last-iterate S by optimizing r without a formula-derived horizon.",
+    "Require the zero-variance antithetic control to reject the counterexample and converge within the claimed budget.",
+    "Rerun all accepted Claim 2 and Claim 6 checks."
+  ],
+  "verdict_if_all_pass": "FALSIFIED"
+}

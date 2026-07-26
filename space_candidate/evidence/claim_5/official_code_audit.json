@@ -1,0 +1,27 @@
+{
+  "official_repository_sha": "6f9fb5c9e432b5cc6ad62916b36f102984b4d076",
+  "audited_path": "CIFAR10_feature_regression/Multiclass_classification.py",
+  "findings": [
+    {
+      "lines": "696-717",
+      "finding": "The entrypoint computes ResNet-50 features before checking for cifar10_resnet50_features.pth, but never saves the computed features and declines training when that untracked file is absent."
+    },
+    {
+      "lines": "696-701",
+      "finding": "The pretrained ResNet-50 classifier head is replaced by a newly initialized Linear(2048,512)+ReLU layer, so the 512-dimensional projection itself is not a published pretrained checkpoint."
+    },
+    {
+      "lines": "734-738",
+      "finding": "N_REPEATS is 1, so the plotted standard-deviation ribbon is identically zero and supplies no sampling uncertainty."
+    },
+    {
+      "lines": "278-281 and 382-384",
+      "finding": "WFR/WGF inner iteration counts vary by epoch and reach 200, whereas the Figure 6 caption states 100 inner loops."
+    },
+    {
+      "lines": "606-607",
+      "finding": "WRM invokes optimizer_theta.step() twice per batch."
+    }
+  ],
+  "effect_on_falsification": "None of these code limitations is used as a counterexample. The falsification uses the authors' own committed full Figure 6 vector curves."
+}

@@ -1,0 +1,57 @@
+{
+  "calibrated_first_hits": [
+    {
+      "S_times_epsilon_squared": 1.9200000000000004,
+      "analytic_iteration_lower_bound": 10.793367623409585,
+      "epsilon": 0.2,
+      "minimum_iterations": 48,
+      "normalized_by_log": 1.192963074354455,
+      "optimizing_step": 0.03340285715205403,
+      "stationarity_at_first_hit": 0.03975246350168266
+    },
+    {
+      "S_times_epsilon_squared": 2.3100000000000005,
+      "analytic_iteration_lower_bound": 56.169980129137315,
+      "epsilon": 0.1,
+      "minimum_iterations": 231,
+      "normalized_by_log": 1.0032202531965118,
+      "optimizing_step": 0.008810128699413305,
+      "stationarity_at_first_hit": 0.0099703091090691
+    },
+    {
+      "S_times_epsilon_squared": 2.6900000000000004,
+      "analytic_iteration_lower_bound": 276.6659590585452,
+      "epsilon": 0.05,
+      "minimum_iterations": 1076,
+      "normalized_by_log": 0.8979440598704488,
+      "optimizing_step": 0.00226092541058473,
+      "stationarity_at_first_hit": 0.0024983761845317047
+    },
+    {
+      "S_times_epsilon_squared": 3.1892,
+      "analytic_iteration_lower_bound": 2158.673524681918,
+      "epsilon": 0.02,
+      "minimum_iterations": 7973,
+      "normalized_by_log": 0.8152303796717991,
+      "optimizing_step": 0.00036849325969337554,
+      "stationarity_at_first_hit": 0.00039998470276975654
+    },
+    {
+      "S_times_epsilon_squared": 3.5635000000000003,
+      "analytic_iteration_lower_bound": 9934.345062277567,
+      "epsilon": 0.01,
+      "minimum_iterations": 35635,
+      "normalized_by_log": 0.7738041931311189,
+      "optimizing_step": 9.29733177904846e-05,
+      "stationarity_at_first_hit": 9.999753766111627e-05
+    }
+  ],
+  "generator": "exact recurrence, golden-section step search, doubling and binary first-hit search",
+  "instance": {
+    "L_Phi": 2.0,
+    "delta_sample": 0.0,
+    "gradient_variance": 1.0,
+    "theta_0": 1.0
+  },
+  "schema_version": 1
+}

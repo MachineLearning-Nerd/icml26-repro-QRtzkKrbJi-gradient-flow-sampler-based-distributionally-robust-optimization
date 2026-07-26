@@ -1,0 +1,41 @@
+{
+  "claim_id": 1,
+  "verdict": "VERIFIED",
+  "instance": {
+    "dimension": 8,
+    "nominal_support_size": 6,
+    "loss_smoothness": 0.35,
+    "tau": 0.8,
+    "epsilon": 0.7,
+    "rgo_tau_upper_bound": 2.857142857142857
+  },
+  "algorithm_summary": {
+    "algorithm_1_conditional_flow_calls": 1,
+    "algorithm_2_projected_outer_steps": 4,
+    "algorithm_3_wgf_updates": 46080,
+    "algorithm_4_location_updates": 25920,
+    "algorithm_4_mass_updates": 25920,
+    "algorithm_4_birth_death_replacements": 5174,
+    "algorithm_5_score_updates": 8640,
+    "algorithm_5_repulsion_updates": 8640,
+    "algorithm_6_accepted_samples": 576,
+    "algorithm_6_rejected_proposals": 569
+  },
+  "transition_checks": {
+    "wgf_transition_max_error": 0.0,
+    "wfr_weight_sum_error": 0.0,
+    "svg_transition_max_error": 8.673617379884035e-19,
+    "rgo_acceptance_rate": 0.7557195571955719,
+    "rgo_maximum_log_acceptance": -0.009240604920045636
+  },
+  "control": {
+    "defects_injected": 6,
+    "defects_rejected": 6,
+    "expected_exit_code": 1
+  },
+  "seeds": {
+    "accepted_trace_runs": [101, 102, 103, 104, 105, 106],
+    "accepted_transition_runs": [310, 311, 312, 313, 314],
+    "negative_controls": [401, 402, 403, 404]
+  }
+}

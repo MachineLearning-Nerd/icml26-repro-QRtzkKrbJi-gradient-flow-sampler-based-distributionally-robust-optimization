@@ -1,0 +1,32 @@
+{
+  "claim_id": 2,
+  "contract_version": 1,
+  "paper_contract": {
+    "arxiv_version": "2510.25956v1",
+    "pdf_sha256": "796d3cb25e2a9062ab4e81201daa7837c4bf615399063b0ed439c9e17e6db8d6",
+    "statement_anchor": "Section 4, Proposition 1, PDF page 7, pdftotext line 439",
+    "proof_anchor": "Appendix C.2, PDF pages 16-17, pdftotext lines 1112-1196",
+    "statement": "Under the displayed smoothness and gradient-dominance assumptions, an epsilon-gradient estimate needs Wasserstein gradient-flow time at least on the order (1/lambda) log(L/sqrt(lambda epsilon))."
+  },
+  "quantifier_under_test": "The necessary-time wording is universal over losses and conditional energies satisfying the assumptions and asymptotic as epsilon tends to zero.",
+  "counterexample": {
+    "data": "rho_0=delta_0, hence every initial particle y_0=0",
+    "loss": "ell(theta,y)=theta*y+y^2/2, evaluated at theta=0",
+    "cost": "c(y,x)=(y-x)^2",
+    "tau": 0.25,
+    "entropy_regularization": 0.5,
+    "smoothness": "d^2 ell/dy^2=1, and d ell/d theta=y is 1-Lipschitz",
+    "conditional_energy": "U(y)=3y^2/2 at theta=x=0",
+    "curvature": "U is 3-strongly convex and satisfies |grad U|^2=6U",
+    "non_warm_start": "delta_0 differs from the Gibbs target; W2=1/sqrt(3)",
+    "contradiction": "Both the initial oracle and exact target oracle are zero, so every positive epsilon is met at t=0 while the claimed scale diverges."
+  },
+  "acceptance_criteria": [
+    "Symbolically verify every smoothness, PL, oracle, and asymptotic statement.",
+    "Independently normalize the continuous target and integrate its exact gradient oracle.",
+    "Observe first-hit time zero over at least six decreasing tolerances while the claimed scale is positive and increasing.",
+    "Reject a theta=1 control at t=0 and independently recover a strictly positive first-hit time.",
+    "Exit nonzero on any certificate, raw-data, checker, or control mismatch."
+  ],
+  "verdict_if_all_pass": "FALSIFIED"
+}

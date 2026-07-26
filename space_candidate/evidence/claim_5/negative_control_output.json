@@ -1,0 +1,6 @@
+{
+  "exit_code": 1,
+  "reason": "both proposed curves were placed one percentage point below the better baseline at every attacked setting",
+  "status": "NO_COUNTEREXAMPLE_AS_EXPECTED",
+  "violations": 0
+}

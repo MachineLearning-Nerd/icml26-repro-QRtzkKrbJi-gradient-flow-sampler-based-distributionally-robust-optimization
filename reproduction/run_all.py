@@ -121,12 +121,39 @@ def run_claim_verifiers() -> list[dict[str, object]]:
     return results
 
 
+def run_release_audit() -> dict[str, object] | None:
+    audit = ROOT / "release" / "audit_candidate.py"
+    if not audit.is_file():
+        return None
+    started = time.perf_counter()
+    completed = subprocess.run(
+        [sys.executable, str(audit)],
+        cwd=ROOT,
+        capture_output=True,
+        text=True,
+    )
+    print("\n--- evaluator-visible release audit ---")
+    print(completed.stdout, end="")
+    if completed.stderr:
+        print(completed.stderr, file=sys.stderr, end="")
+    if completed.returncode != 0:
+        raise RuntimeError(
+            f"evaluator-visible release audit failed (exit {completed.returncode})"
+        )
+    return {
+        "exit_code": completed.returncode,
+        "runtime_s": round(time.perf_counter() - started, 6),
+        "status": "PASS",
+    }
+
+
 def main() -> int:
     started = time.perf_counter()
     source_manifest = json.loads(SOURCE_MANIFEST.read_text(encoding="utf-8"))
     historical = validate_historical_manifest()
     verdict = validate_live_verdict_snapshot()
     claims = run_claim_verifiers()
+    release_audit = run_release_audit()
     summary = {
         "schema_version": 1,
         "campaign_status": "BASELINE" if not claims else "CLAIM_EVIDENCE",
@@ -141,6 +168,7 @@ def main() -> int:
         "paper_contract_version": source_manifest["judged_contract"]["version"],
         "paper_current_version": source_manifest["current_source"]["version"],
         "claim_verifiers": claims,
+        "release_audit": release_audit,
         "runtime_s": round(time.perf_counter() - started, 6),
     }
     print("\n=== GFS-DRO CUMULATIVE EVIDENCE SUMMARY ===")
@@ -150,4 +178,3 @@ def main() -> int:
 
 if __name__ == "__main__":
     raise SystemExit(main())
-

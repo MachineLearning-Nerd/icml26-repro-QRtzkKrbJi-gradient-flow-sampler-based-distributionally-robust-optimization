@@ -1,0 +1,11 @@
+{
+  "task": "cumulative six-claim and evaluator-visible release regression",
+  "estimated_scientific_cores": 1,
+  "estimated_scientific_runtime_seconds": 30,
+  "runtime_classification": "uncertain because all claim verifiers and release gates rerun cumulatively",
+  "backend": "hf",
+  "selected_flavor": "cpu-upgrade",
+  "gpu_requested": false,
+  "fixed_command": "uv run --frozen --no-dev python -m reproduction.run_all",
+  "actual_allocation_and_runtime": "to be recorded in the immutable managed run and experiment description"
+}

@@ -1,0 +1,17 @@
+{
+  "claim_id": 5,
+  "contract_version": 1,
+  "evaluated_claim": "On CIFAR-10 adversarial training under PGD attacks, both WFR- and WGF-based DRO have higher robust accuracy at every plotted perturbation setting than each baseline DRO method.",
+  "formal_quantifier": "For every epsilon in {0.2,0.02,0.002}, every nonzero plotted Delta in {0.008,...,0.08}, every proposed method in {WGF,WFR}, and every baseline in {Dual,WRM}, robust_accuracy(proposed)>robust_accuracy(baseline).",
+  "paper_contract": {
+    "arxiv_version": "2510.25956v1",
+    "pdf_sha256": "796d3cb25e2a9062ab4e81201daa7837c4bf615399063b0ed439c9e17e6db8d6",
+    "statement_anchor": "Section 6.3 and Figure 6, PDF page 11, pdftotext lines 752-803",
+    "paper_wording": "WFR and WGF, in particular, consistently achieve a high degree of robustness across all settings.",
+    "figure_domain": "CIFAR-10 512-dimensional features, multiclass logistic regression, l2 PGD, normalized Delta 0 through 0.08, tau=0.05, epsilon in {0.2,0.02,0.002}"
+  },
+  "baseline_definition": "Section 6 introduces WFR and WGF alongside the Dual and WRM comparison methods; these are the two baseline DRO methods used in the exact dominance test.",
+  "falsification_criterion": "One nonzero attacked setting where either proposed method has lower robust accuracy (higher test error) than either baseline contradicts the universal claim. The certificate requires such a setting separately for WGF and WFR, with a margin above two percentage points.",
+  "verdict_if_checker_passes": "FALSIFIED",
+  "scope_note": "The paper's literal phrase 'high degree of robustness' is qualitative. This contract evaluates the stronger strict dominance wording in the live judged claim and does not characterize the broader qualitative statement as false."
+}
