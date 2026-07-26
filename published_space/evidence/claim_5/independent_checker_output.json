@@ -1,0 +1,33 @@
+{
+  "all_settings_quantifier_holds": false,
+  "baseline_methods": ["Dual", "WRM"],
+  "epsilon_count": 3,
+  "source_point_count": 132,
+  "status": "PASS",
+  "strongest_counterexamples": {
+    "WFR": {
+      "accuracy_deficit_percentage_points": 2.2599633601491256,
+      "baseline": "WRM",
+      "baseline_error_percent": 19.438406312482975,
+      "delta": 0.008,
+      "epsilon": "0.2",
+      "proposed": "WFR",
+      "proposed_error_percent": 21.6983696726321
+    },
+    "WGF": {
+      "accuracy_deficit_percentage_points": 2.6902170259375247,
+      "baseline": "WRM",
+      "baseline_error_percent": 19.438406312482975,
+      "delta": 0.008,
+      "epsilon": "0.2",
+      "proposed": "WGF",
+      "proposed_error_percent": 22.1286233384205
+    }
+  },
+  "tested_attack_point_count": 10,
+  "verdict": "FALSIFIED",
+  "violation_counts": {
+    "WFR": 29,
+    "WGF": 20
+  }
+}

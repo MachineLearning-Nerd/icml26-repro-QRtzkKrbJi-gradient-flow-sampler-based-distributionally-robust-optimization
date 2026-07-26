@@ -1,0 +1,12 @@
+{
+  "all_measured_first_hits": [
+    0.0
+  ],
+  "exit_code": 0,
+  "gradient_error_at_zero": 0.0,
+  "initial_to_target_w2": 0.5773502691896257,
+  "largest_claimed_scale": 2.1532718038917076,
+  "smallest_epsilon": 1e-12,
+  "status": "PASS",
+  "tolerance_count": 6
+}

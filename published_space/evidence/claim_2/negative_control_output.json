@@ -1,0 +1,10 @@
+{
+  "epsilon": 0.1,
+  "exit_code": 1,
+  "initial_gradient_error": 0.3333333333333333,
+  "mutation": "theta=0 -> theta=1 (break target symmetry)",
+  "positive_first_hit_time": 0.4013242681086453,
+  "reason": "time-zero gradient error exceeds epsilon",
+  "status": "REJECTED_AS_EXPECTED",
+  "theta": 1.0
+}

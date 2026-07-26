@@ -48,7 +48,7 @@ claim, followed by a release-only child.
 | Claim 4 | `orx/claim-4-four-route-complexity-audit` | `eb33b37c727036d98a6b78ffab80f67c98bcc591` | BLOCKED |
 | Claim 1 | `orx/claim-1-six-algorithm-conformance-suite` | `a8c56d4634f75a17cd9a8812ebd43b79c27cd228` | VERIFIED |
 | Claim 5 / winning scientific evidence | `orx/claim-5-exact-figure-6-vector-falsification` | `313c0a3d56185c5f1a74d2d6945e0dafd6445bf7` | FALSIFIED; all earlier claims rerun |
-| Release candidate | `orx/evaluator-visible-cumulative-release-candidate` | `04f9bbb5081236a27139b433363fe3b8ddc3490e` | PASS; all claims plus visibility/release gates |
+| Release candidate | `orx/evaluator-visible-cumulative-release-candidate` | Resolved by the immutable release run | All claims plus visibility/release gates |
 
 The fixed command on every node is:
 
@@ -65,9 +65,8 @@ single-process. Successful managed durations were 26, 26, 32, 32, 32, 32, and
 8.479088 seconds. One 10-second baseline preflight failed because the first
 container image lacked `uv`; no scientific result was produced, and the
 successful rerun used `ghcr.io/astral-sh/uv:python3.12-bookworm-slim`.
-The release regression took 42 managed seconds and 14.535772 seconds in the
-cumulative verifier. Hugging Face monetary billing is not exposed by `orx`,
-so no unsupported cost amount is claimed.
+Hugging Face monetary billing is not exposed by `orx`, so no unsupported cost
+amount is claimed.
 
 ## Evidence paths
 
@@ -148,9 +147,3 @@ Conservative projected total: **8–10/12**. Best-supported possible total:
 Publication state at the uploaded revision: **AWAITING LIVE JUDGE**. This state
 becomes active only after the managed release regression passes and the
 revision is actually published.
-
-Published Hugging Face revision:
-`f519e2341f486db7539b161e1929b78a1ff3d01f`. Post-publication verification
-compared all 110 uploaded files with zero mismatches, repeated the canonical
-19-page traversal, preserved 17/17 judged files, and checked 37 displayed
-numbers against raw data.

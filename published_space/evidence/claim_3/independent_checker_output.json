@@ -1,0 +1,12 @@
+{
+  "epsilon_count": 5,
+  "exact_first_hit_match": true,
+  "exit_code": 0,
+  "largest_minimum_iterations": 35635,
+  "minimum_epsilon": 0.01,
+  "normalized_ratio_range": [
+    0.7738041931311189,
+    1.192963074354455
+  ],
+  "status": "PASS"
+}

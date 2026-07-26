@@ -1,0 +1,26 @@
+{
+  "claim_id": 6,
+  "contract_version": 1,
+  "paper_contract": {
+    "arxiv_version": "2510.25956v1",
+    "pdf_sha256": "796d3cb25e2a9062ab4e81201daa7837c4bf615399063b0ed439c9e17e6db8d6",
+    "statement_anchor": "Section 3.1, Lemma 1, PDF page 3, pdftotext line 157",
+    "proof_anchor": "Appendix C.1, PDF page 16, pdftotext line 1083",
+    "statement": "The entropy-regularized variational problem (2) is equivalent to a Schrodinger half-bridge problem with the second marginal fixed to rho_0; conditional disintegration turns it into an expected KL minimization whose minimizer is the conditional Gibbs density."
+  },
+  "domain": {
+    "spaces": "sigma-finite measured spaces X and Y",
+    "fixed_marginal": "rho_0 on X",
+    "admissibility": "joint laws Pi with X-marginal rho_0, a conditional density q_x on Y, finite displayed objective, and 0 < Z_x < infinity for rho_0-almost every x",
+    "parameters": "tau > 0 and epsilon > 0"
+  },
+  "acceptance_criteria": [
+    "Eliminating the free Y-marginal leaves exactly the joint half-bridge objective.",
+    "The conditional integrand identity J_x(q)=a KL(q||p_x)-a log Z_x is symbolically zero after a=epsilon/(2 tau) and p_x proportional to exp(-A_x/a).",
+    "Independent continuous quadrature normalizes p_x and observes the identity, stationarity, and strict increases under nonzero feasible perturbations.",
+    "A wrong-temperature Gibbs control exits nonzero for the intended stationarity violation.",
+    "The cumulative verifier exits nonzero if any accepted result or expected control behavior changes."
+  ],
+  "verdict_if_all_pass": "VERIFIED",
+  "scope_note": "The proof certificate supplies the universal functional argument. Finite numerical cases are only independent regression and sign/coefficient checks."
+}

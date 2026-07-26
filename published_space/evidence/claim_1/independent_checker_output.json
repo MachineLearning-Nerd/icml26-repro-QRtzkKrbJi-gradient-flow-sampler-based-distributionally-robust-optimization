@@ -1,0 +1,62 @@
+{
+  "algorithms_checked": [1, 2, 3, 4, 5, 6],
+  "dimension": 8,
+  "nominal_support_size": 6,
+  "status": "PASS",
+  "trace_counters": {
+    "algorithm_1": {
+      "conditional_gradient_flow": 1,
+      "nominal_sample": 1,
+      "worst_case_output": 1
+    },
+    "algorithm_2": {
+      "algorithm_1_call": 4,
+      "conditional_gradient_flow": 4,
+      "projected_dro_step": 4
+    },
+    "algorithm_3": {
+      "nominal_sample": 3,
+      "particle_initialization": 576,
+      "projected_dro_step": 3,
+      "standard_normal_draw": 368640,
+      "wgf_euler_update": 46080
+    },
+    "algorithm_4": {
+      "birth_death_replacement": 5174,
+      "fisher_rao_mass_update": 25920,
+      "nominal_sample": 3,
+      "particle_initialization": 576,
+      "post_birth_death_normalization": 132,
+      "standard_normal_draw": 207360,
+      "weight_normalization": 135,
+      "weighted_projected_dro_step": 3,
+      "wfr_location_update": 25920
+    },
+    "algorithm_5": {
+      "gaussian_particle_initialization": 288,
+      "kernel_pair_evaluation": 829440,
+      "kernel_repulsion": 8640,
+      "nominal_sample": 3,
+      "projected_dro_step": 3,
+      "score_force": 8640,
+      "svg_transport_update": 8640
+    },
+    "algorithm_6": {
+      "approximate_minimizer": 3,
+      "gaussian_proposal": 1145,
+      "nominal_sample": 3,
+      "projected_dro_step": 3,
+      "rejection_accept": 576,
+      "rejection_reject": 569
+    }
+  },
+  "transition_checks": {
+    "rgo_acceptance_rate": 0.7557195571955719,
+    "rgo_maximum_log_acceptance": -0.009240604920045636,
+    "rgo_rejections": 331.0,
+    "svg_transition_max_error": 8.673617379884035e-19,
+    "wfr_birth_death_events": 72.0,
+    "wfr_weight_sum_error": 0.0,
+    "wgf_transition_max_error": 0.0
+  }
+}

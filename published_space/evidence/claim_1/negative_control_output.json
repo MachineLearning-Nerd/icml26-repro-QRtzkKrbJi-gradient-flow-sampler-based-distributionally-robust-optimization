@@ -1,0 +1,13 @@
+{
+  "defect_count": 6,
+  "exit_code": 1,
+  "rejected": {
+    "algorithm_1": "missing conditional gradient-flow call",
+    "algorithm_2": "ascent sign differs from projected descent",
+    "algorithm_3": "ULA Gaussian noise removed",
+    "algorithm_4": "Fisher-Rao mass and birth-death removed",
+    "algorithm_5": "kernel repulsion sign reversed",
+    "algorithm_6": "accept-all bypasses rejection test"
+  },
+  "status": "REJECTED_AS_EXPECTED"
+}

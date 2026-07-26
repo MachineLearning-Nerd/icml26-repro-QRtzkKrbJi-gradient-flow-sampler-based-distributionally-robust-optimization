@@ -1,0 +1,51 @@
+{
+  "control": {
+    "epsilon": 0.1,
+    "initial_gradient_error": 0.3333333333333333,
+    "measured_first_hit": 0.4013242681086453,
+    "theta": 1.0
+  },
+  "counterexample": {
+    "entropy_regularization": 0.5,
+    "gradient_observable_lipschitz": 1.0,
+    "initial_to_target_w2": 0.5773502691896257,
+    "lambda_pl": 6.0,
+    "loss_smoothness": 1.0,
+    "strong_convexity": 3.0,
+    "theta": 0.0
+  },
+  "generator": "closed-form quadratic WGF",
+  "schema_version": 1,
+  "tolerance_sweep": [
+    {
+      "claimed_scale": 0.23445089306333636,
+      "epsilon": 0.01,
+      "measured_first_hit": 0.0
+    },
+    {
+      "claimed_scale": 0.6182150752290106,
+      "epsilon": 0.0001,
+      "measured_first_hit": 0.0
+    },
+    {
+      "claimed_scale": 1.0019792573946849,
+      "epsilon": 1e-06,
+      "measured_first_hit": 0.0
+    },
+    {
+      "claimed_scale": 1.3857434395603592,
+      "epsilon": 1e-08,
+      "measured_first_hit": 0.0
+    },
+    {
+      "claimed_scale": 1.7695076217260335,
+      "epsilon": 1e-10,
+      "measured_first_hit": 0.0
+    },
+    {
+      "claimed_scale": 2.1532718038917076,
+      "epsilon": 1e-12,
+      "measured_first_hit": 0.0
+    }
+  ]
+}

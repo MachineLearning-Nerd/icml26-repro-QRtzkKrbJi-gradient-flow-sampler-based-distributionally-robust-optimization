@@ -24,6 +24,8 @@ The conservative projected score is **8–10/12** and the best-supported
 possible score is **10/12**. These are forecasts; the live judged score remains
 4/12 until the evaluator records a new revision.
 
+- [Published Hugging Face evidence at revision `f519e2341f486db7539b161e1929b78a1ff3d01f`](https://huggingface.co/spaces/DineshAI/QRtzkKrbJi/tree/f519e2341f486db7539b161e1929b78a1ff3d01f)
+- [Exact published text mirror](published_space/README.md)
 - [Illustrated technical report](reports/reproduction/report.md)
 - [Self-contained marimo tutorial](notebooks/gfs_dro_reproduction.py)
 - [Release forecast and evidence ledger](reports/reproduction/release_report.md)
@@ -42,7 +44,7 @@ Every experiment inherited this exact command:
 | [`orx/claim-4-four-route-complexity-audit`](https://github.com/MachineLearning-Nerd/icml26-repro-QRtzkKrbJi-gradient-flow-sampler-based-distributionally-robust-optimization/tree/orx/claim-4-four-route-complexity-audit) | Proof, version, source, and falsification routes | `uv run --frozen --no-dev python -m reproduction.run_all` | Claim 4 BLOCKED · LOW | HF `cpu-upgrade`, one-process verifier |
 | [`orx/claim-1-six-algorithm-conformance`](https://github.com/MachineLearning-Nerd/icml26-repro-QRtzkKrbJi-gradient-flow-sampler-based-distributionally-robust-optimization/tree/orx/claim-1-six-algorithm-conformance) | Algorithms 1–6 conformance and six defect controls | `uv run --frozen --no-dev python -m reproduction.run_all` | Claim 1 VERIFIED · HIGH | HF `cpu-upgrade`, one-process verifier |
 | [`orx/claim-5-exact-figure-6-vector-falsification`](https://github.com/MachineLearning-Nerd/icml26-repro-QRtzkKrbJi-gradient-flow-sampler-based-distributionally-robust-optimization/tree/orx/claim-5-exact-figure-6-vector-falsification) | Exhaustive official CIFAR-10 vector audit | `uv run --frozen --no-dev python -m reproduction.run_all` | Claim 5 FALSIFIED · MEDIUM | HF `cpu-upgrade`; 8.479088 s cumulative science |
-| [`orx/evaluator-visible-cumulative-release-candidate`](https://github.com/MachineLearning-Nerd/icml26-repro-QRtzkKrbJi-gradient-flow-sampler-based-distributionally-robust-optimization/tree/orx/evaluator-visible-cumulative-release-candidate) | Visibility, subset, security, and cumulative release gates | `uv run --frozen --no-dev python -m reproduction.run_all` | Release-candidate regression (see report for final run) | HF `cpu-upgrade`, CPU only |
+| [`orx/evaluator-visible-cumulative-release-candidate`](https://github.com/MachineLearning-Nerd/icml26-repro-QRtzkKrbJi-gradient-flow-sampler-based-distributionally-robust-optimization/tree/orx/evaluator-visible-cumulative-release-candidate) | Visibility, subset, security, and cumulative release gates | `uv run --frozen --no-dev python -m reproduction.run_all` | PASS: six claims, 17-file subset, 110-file manifest, and evaluator traversal | HF `cpu-upgrade`; 42 s managed, 14.535772 s cumulative verifier |
 | `main` | Public README, report, notebook, and published text mirror | Not run as an experiment (publication surface) | Presentation-only | No experiment compute |
 
 ## Reproduce

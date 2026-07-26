@@ -1,0 +1,11 @@
+{
+  "epsilon": 0.01,
+  "epsilon_inverse_squared_budget": 10000,
+  "exit_code": 1,
+  "final_stationarity": 6.103515625e-05,
+  "first_hit_iterations": 8,
+  "mutation": "one Gaussian sample -> antithetic pair",
+  "reason": "the stochastic-gradient variance cancels exactly",
+  "status": "COUNTEREXAMPLE_REJECTED_AS_EXPECTED",
+  "step": 0.25
+}
