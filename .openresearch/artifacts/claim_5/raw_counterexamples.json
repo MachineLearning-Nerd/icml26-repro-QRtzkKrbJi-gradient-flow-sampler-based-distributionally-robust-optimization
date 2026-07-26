@@ -1,0 +1,30 @@
+{
+  "source": "Authors' official vector PDF at ZusenXu/GFS-DRO commit 6f9fb5c9e432b5cc6ad62916b36f102984b4d076",
+  "paper_setting": {
+    "dataset": "CIFAR-10",
+    "features": "512-dimensional ResNet-50-derived features",
+    "attack": "10-step l2 PGD in the official code",
+    "tau": 0.05,
+    "epsilon": 0.2,
+    "normalized_attack_radius": 0.008,
+    "training_epochs": 10
+  },
+  "plotted_test_error_percent": {
+    "WRM": 19.438406312482975,
+    "WFR": 21.6983696726321,
+    "WGF": 22.1286233384205
+  },
+  "plotted_robust_accuracy_percent": {
+    "WRM": 80.56159368751702,
+    "WFR": 78.3016303273679,
+    "WGF": 77.8713766615795
+  },
+  "accuracy_deficit_vs_wrm_percentage_points": {
+    "WFR": 2.2599633601491256,
+    "WGF": 2.6902170259375247
+  },
+  "nonzero_attack_violation_counts_across_three_epsilon_values_and_two_baselines": {
+    "WFR": 29,
+    "WGF": 20
+  }
+}
