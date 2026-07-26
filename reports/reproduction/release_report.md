@@ -125,7 +125,23 @@ orx logs <each completed managed run id>
 uv run --frozen --no-dev marimo check notebooks/gfs_dro_reproduction.py
 uv run --frozen --no-dev python release/build_space_release.py
 uv run --frozen --no-dev python release/audit_candidate.py
+orx exp run 7b0884c8-8299-453c-a218-d2fcb6da257e --backend hf --flavor cpu-upgrade --image ghcr.io/astral-sh/uv:python3.12-bookworm-slim
+orx exp wait 7b0884c8-8299-453c-a218-d2fcb6da257e --timeout 480
+orx logs 715d6e79-9b83-4da7-9fda-d7252ea7e0e8 --bytes 100000
+hf upload DineshAI/QRtzkKrbJi <exact-staging-directory> . --repo-type space --commit-message "Exact claim audit with cumulative evidence" --format json
+HfApi.create_commit(repo_id="DineshAI/QRtzkKrbJi", repo_type="space", parent_commit="735012f52396955c5734e8fc568adfdf2abda757", operations=<110 manifest-verified text additions>)
+hf download DineshAI/QRtzkKrbJi <110 allowlisted paths> --repo-type space --revision f519e2341f486db7539b161e1929b78a1ff3d01f --max-workers 1
+uv run --frozen --no-dev python release/audit_candidate.py --structure-only --candidate-dir <fresh-published-download>
+git merge --ff-only orx/evaluator-visible-cumulative-release-candidate
+git push origin main
+git ls-remote origin refs/heads/main refs/heads/orx/evaluator-visible-cumulative-release-candidate
 ```
+
+The generic `hf upload` attempt made no commit because its internal
+repository-creation preflight was rate-limited. Publication therefore used the
+listed direct existing-repository `HfApi.create_commit` call, with the judged
+revision as the required parent and no token printed or passed on the command
+line.
 
 The per-node exact IDs, immutable run IDs, commands, results, and actual
 durations remain in `orx exp desc`, `orx runs`, and `orx logs`; the report does
