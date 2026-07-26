@@ -41,6 +41,23 @@ def main() -> int:
     checker = parse_output(checker_process)
     if checker["status"] != "PASS" or checker["case_count"] != 4:
         raise AssertionError("independent continuous checker did not pass")
+    recorded_checker = json.loads(
+        (HERE / "independent_checker_output.json").read_text(encoding="utf-8")
+    )
+    checker_summary = {
+        "case_count": checker["case_count"],
+        "exit_code": checker_process.returncode,
+        "max_identity_residual": checker["max_identity_residual"],
+        "max_mass_error": checker["max_mass_error"],
+        "max_raw_generator_delta": checker["max_raw_generator_delta"],
+        "minimum_perturbation_objective_gap": checker[
+            "minimum_perturbation_objective_gap"
+        ],
+        "minimum_proposal_kl": checker["minimum_proposal_kl"],
+        "status": checker["status"],
+    }
+    if checker_summary != recorded_checker:
+        raise AssertionError("recorded independent-checker output changed")
 
     control_process = run("negative_control.py")
     control = parse_output(control_process)
@@ -64,15 +81,9 @@ def main() -> int:
             ],
         },
         "independent_checker": {
-            "exit_code": checker_process.returncode,
-            "case_count": checker["case_count"],
-            "max_identity_residual": checker["max_identity_residual"],
-            "max_mass_error": checker["max_mass_error"],
-            "minimum_proposal_kl": checker["minimum_proposal_kl"],
-            "minimum_perturbation_objective_gap": checker[
-                "minimum_perturbation_objective_gap"
-            ],
-            "max_raw_generator_delta": checker["max_raw_generator_delta"],
+            key: checker_summary[key]
+            for key in checker_summary
+            if key != "status"
         },
         "negative_control": {
             "exit_code": control_process.returncode,
