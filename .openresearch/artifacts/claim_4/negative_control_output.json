@@ -1,0 +1,8 @@
+{
+  "claimed_v1_total_exponent": 4,
+  "corrected_total_exponent": 6,
+  "exit_code": 1,
+  "mutation": "v1 outer exponent 2 -> corrected v3 exponent 4",
+  "reason": "total exponent becomes 6, not the claimed 4",
+  "status": "REJECTED_AS_EXPECTED"
+}

@@ -1,0 +1,17 @@
+{
+  "sources": [
+    {
+      "arxiv_id": "1903.08568",
+      "authors": "Santosh S. Vempala and Andre Wibisono",
+      "relevance": "Theorem 1 gives ULA KL convergence under LSI and smoothness with an inverse-KL-tolerance iteration factor.",
+      "title": "Rapid Convergence of the Unadjusted Langevin Algorithm: Isoperimetry Suffices"
+    },
+    {
+      "arxiv_id": "1912.02365",
+      "authors": "Yossi Arjevani, Yair Carmon, John C. Duchi, Dylan J. Foster, Nathan Srebro, and Blake Woodworth",
+      "relevance": "The bounded-variance stochastic first-order lower bound contains an Omega(L Delta sigma^2/epsilon^4) term for smooth nonconvex stationarity.",
+      "title": "Lower Bounds for Non-Convex Stochastic Optimization"
+    }
+  ],
+  "unresolved_link": "Neither source proves that its hard outer oracle is realizable by Algorithm 3 while also forcing a per-query ULA accuracy cost; multiplying unrelated upper/lower bounds would be invalid."
+}

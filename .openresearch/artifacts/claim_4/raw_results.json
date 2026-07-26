@@ -1,0 +1,46 @@
+{
+  "family": "exact Gaussian Algorithm 3 instance with one-step ULA",
+  "parameters": {
+    "L_Phi": 2.0,
+    "delta_sample_mean": 0.0,
+    "entropy_regularization": 2.0,
+    "gradient_variance": 2.0,
+    "inner_iterations": 1,
+    "inner_step": 1.0,
+    "tau": 1.0
+  },
+  "search": [
+    {
+      "epsilon": 0.1,
+      "epsilon_inverse_fourth_budget": 9999.999999999998,
+      "minimum_total_work": 461,
+      "optimizing_outer_step": 0.004432998597880572,
+      "stationarity_at_first_hit": 0.009989757603657645,
+      "work_to_budget_ratio": 0.04610000000000001
+    },
+    {
+      "epsilon": 0.05,
+      "epsilon_inverse_fourth_budget": 159999.99999999997,
+      "minimum_total_work": 2151,
+      "optimizing_outer_step": 0.001132214754144795,
+      "stationarity_at_first_hit": 0.002499432493304559,
+      "work_to_budget_ratio": 0.013443750000000003
+    },
+    {
+      "epsilon": 0.02,
+      "epsilon_inverse_fourth_budget": 6249999.999999999,
+      "minimum_total_work": 15946,
+      "optimizing_outer_step": 0.00018428062622868896,
+      "stationarity_at_first_hit": 0.00039998471529266937,
+      "work_to_budget_ratio": 0.0025513600000000003
+    },
+    {
+      "epsilon": 0.01,
+      "epsilon_inverse_fourth_budget": 99999999.99999999,
+      "minimum_total_work": 71269,
+      "optimizing_outer_step": 4.648943250165628e-05,
+      "stationarity_at_first_hit": 9.999884252134451e-05,
+      "work_to_budget_ratio": 0.0007126900000000001
+    }
+  ]
+}

@@ -41,6 +41,22 @@ def main() -> int:
     checker = output(checker_process)
     if checker["status"] != "PASS":
         raise AssertionError("independent calibration did not pass")
+    checker_summary = {
+        "epsilon_count": checker["epsilon_count"],
+        "exact_first_hit_match": checker["exact_first_hit_match"],
+        "exit_code": checker_process.returncode,
+        "largest_minimum_iterations": checker[
+            "largest_minimum_iterations"
+        ],
+        "minimum_epsilon": checker["minimum_epsilon"],
+        "normalized_ratio_range": checker["normalized_ratio_range"],
+        "status": checker["status"],
+    }
+    recorded_checker = json.loads(
+        (HERE / "independent_checker_output.json").read_text(encoding="utf-8")
+    )
+    if checker_summary != recorded_checker:
+        raise AssertionError("recorded independent-checker output changed")
 
     control_process = run("negative_control.py")
     control = output(control_process)
@@ -72,16 +88,9 @@ def main() -> int:
             ],
         },
         "independent_checker": {
-            "exit_code": checker_process.returncode,
-            "epsilon_count": checker["epsilon_count"],
-            "minimum_epsilon": checker["minimum_epsilon"],
-            "largest_minimum_iterations": checker[
-                "largest_minimum_iterations"
-            ],
-            "exact_first_hit_match": checker["exact_first_hit_match"],
-            "normalized_ratio_range": checker[
-                "normalized_ratio_range"
-            ],
+            key: checker_summary[key]
+            for key in checker_summary
+            if key != "status"
         },
         "negative_control": {
             "exit_code": control_process.returncode,

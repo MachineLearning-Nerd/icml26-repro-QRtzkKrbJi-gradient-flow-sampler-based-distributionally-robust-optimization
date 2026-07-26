@@ -1,0 +1,21 @@
+{
+  "claim_id": 4,
+  "contract_version": 1,
+  "paper_contract": {
+    "arxiv_version": "2510.25956v1",
+    "pdf_sha256": "796d3cb25e2a9062ab4e81201daa7837c4bf615399063b0ed439c9e17e6db8d6",
+    "statement_anchor": "Section 5, Theorem 2, PDF page 8, pdftotext line 527",
+    "proof_anchor": "Appendix C.4, PDF page 19, pdftotext lines 1314-1363",
+    "statement": "Under Assumptions 1-4, total Algorithm 3 complexity is soft-O(L_Phi L_U^2 L_f^2 d^2/(alpha_U^3 epsilon_opt^4))."
+  },
+  "confidence": "LOW",
+  "required_routes": [
+    "independent proof-dependency reconstruction",
+    "current-version and author-correction audit",
+    "independent primary-source lower/upper-bound audit",
+    "dedicated assumption-satisfying falsification search"
+  ],
+  "acceptance_policy": "A proof flaw or corrected exponent is not by itself a falsification. Mark FALSIFIED only if a valid Algorithm 3 lower-bound instance contradicts epsilon^-4; otherwise mark BLOCKED after all four routes.",
+  "verdict_after_routes": "BLOCKED",
+  "unblocker": "A rigorous direct-product embedding of a stochastic nonconvex epsilon^-4 lower-bound instance into the entropy-Wasserstein DRO/Algorithm 3 class, with an unavoidable per-oracle ULA cost, or a new correct proof of the v1 epsilon^-4 upper bound."
+}
