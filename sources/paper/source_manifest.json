@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "retrieved_at": "2026-07-26T09:12:19Z",
+  "retrieval_user_agent": "OpenResearch-Reproduction/1.0 (paper audit; contact via repository)",
+  "judged_contract": {
+    "version": "2510.25956v1",
+    "published_label": "A PREPRINT - OCTOBER 31, 2025",
+    "pdf_url": "https://arxiv.org/pdf/2510.25956v1",
+    "pdf_sha256": "796d3cb25e2a9062ab4e81201daa7837c4bf615399063b0ed439c9e17e6db8d6",
+    "anchors": {
+      "claim_1": "Section 3.2 and Algorithms 1-6; Algorithms 3-4 are WGF/WFR",
+      "claim_2": "Section 4, Proposition 1; proof Appendix C.2",
+      "claim_3": "Section 5, Theorem 1; proof Appendix C.3",
+      "claim_4": "Section 5, Theorem 2; derivation Appendix C.4",
+      "claim_5": "Section 6.3, Figure 6",
+      "claim_6": "Section 3.1, Lemma 1; proof Appendix C.1"
+    }
+  },
+  "intermediate_source": {
+    "version": "2510.25956v2",
+    "pdf_url": "https://arxiv.org/pdf/2510.25956v2",
+    "pdf_sha256": "47267920f59aad2b89462ce62076e498f8850cdc3f9f304f69665aba59d6d215"
+  },
+  "current_source": {
+    "version": "2510.25956v3",
+    "updated_at": "2026-05-25T19:59:22Z",
+    "pdf_url": "https://arxiv.org/pdf/2510.25956v3",
+    "pdf_sha256": "88720453447d8affcefd3e63097c52f512d5b275766ba3e73dff9af2ca1c0f8f",
+    "ar5iv_url": "https://ar5iv.labs.arxiv.org/html/2510.25956",
+    "ar5iv_sha256": "80e5cd4689c7132e88c1005ab698e1789b2028fc2a0cfe93c1f632a0f39e74b9",
+    "alphaxiv_text_sha256": "53febfa6f5a5d150bf45d4697ddd62772a3af04ee7615679eee8974973909f5e"
+  },
+  "arxiv_api": {
+    "url": "https://export.arxiv.org/api/query?id_list=2510.25956",
+    "sha256": "3f572f0fd708e7219bfca12443d5fca73bb43e38ea5af586b2d81b91c05be323"
+  },
+  "official_code": {
+    "url": "https://github.com/ZusenXu/GFS-DRO",
+    "git_sha": "6f9fb5c9e432b5cc6ad62916b36f102984b4d076",
+    "tree_api_sha256": "fefa468cd1a5df2dab77e5b13f78b35135effbf441b35f630f57ca8bdde8a554",
+    "readme_sha256": "7cd756c94dd22fa36c71f3149eef7ad80e246ec8d96db4569c09856de9269a7f",
+    "cifar_script_sha256": "c8bf279ce59d8a5a4ebcfd18c03e13211ba57dd1564ff512dd2bad4d1db1ca52"
+  },
+  "judge_dataset": {
+    "repo": "ICML-2026-agent-repro/verdicts",
+    "revision": "3790325497824bcf196ac70bc3b97a97f4456350",
+    "url": "https://huggingface.co/datasets/ICML-2026-agent-repro/verdicts",
+    "full_file_sha256": "094958ed84439855aadbe3fa49bac7f2d175c8342a08545af569c0bc168d0ad4",
+    "filter": "space_id == \"DineshAI/QRtzkKrbJi\"",
+    "filtered_sha256": "b9040d4c59df8367e9c5f7ebdfb8acf3bf8598c3a4c2547b09b9d79db20cc954"
+  }
+}
+

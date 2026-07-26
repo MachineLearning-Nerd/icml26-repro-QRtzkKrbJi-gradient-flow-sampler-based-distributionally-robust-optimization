@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "title": "Repro - Unified PDE Gradient Flow for Distributionally Robust Optimization",
+  "emoji": "🎯",
+  "space_id": "DineshAI/QRtzkKrbJi",
+  "paper": null,
+  "tags": [
+    "icml2026-repro",
+    "paper-QRtzkKrbJi"
+  ],
+  "updated_at": "2026-07-25T16:21:00+00:00",
+  "root": {
+    "slug": "index",
+    "title": "Repro - Unified PDE Gradient Flow for Distributionally Robust Optimization",
+    "file": "pages/index.md",
+    "children": [
+      {
+        "slug": "overview",
+        "title": "Overview",
+        "file": "pages/overview/page.md",
+        "children": []
+      },
+      {
+        "slug": "claims",
+        "title": "Claims",
+        "file": "pages/claims/page.md",
+        "children": []
+      },
+      {
+        "slug": "evidence",
+        "title": "Evidence",
+        "file": "pages/evidence/page.md",
+        "children": []
+      },
+      {
+        "slug": "verification-run",
+        "title": "Verification run",
+        "file": "pages/verification-run/page.md",
+        "children": []
+      },
+      {
+        "slug": "conclusion",
+        "title": "Conclusion",
+        "file": "pages/conclusion/page.md",
+        "children": []
+      }
+    ]
+  },
+  "agent_view_tokens": 1550,
+  "revision": "1784996460655672477"
+}
