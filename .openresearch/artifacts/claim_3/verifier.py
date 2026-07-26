@@ -1,4 +1,4 @@
-"""Fail-closed verifier for the literal necessary-time claim."""
+"""Fail-closed verifier for the v1 outer-loop rate."""
 
 from __future__ import annotations
 
@@ -33,36 +33,21 @@ def main() -> int:
         raise AssertionError(certificate_process.stderr)
     certificate = output(certificate_process)
     if certificate["status"] != "PASS":
-        raise AssertionError("symbolic assumptions did not pass")
+        raise AssertionError("symbolic counterexample did not pass")
 
     checker_process = run("independent_checker.py")
     if checker_process.returncode != 0:
         raise AssertionError(checker_process.stderr)
     checker = output(checker_process)
     if checker["status"] != "PASS":
-        raise AssertionError("continuous checker did not pass")
-    checker_summary = {
-        "all_measured_first_hits": checker["all_measured_first_hits"],
-        "exit_code": checker_process.returncode,
-        "gradient_error_at_zero": checker["gradient_error_at_zero"],
-        "initial_to_target_w2": checker["initial_to_target_w2"],
-        "largest_claimed_scale": checker["largest_claimed_scale"],
-        "smallest_epsilon": checker["smallest_epsilon"],
-        "status": checker["status"],
-        "tolerance_count": checker["tolerance_count"],
-    }
-    recorded_checker = json.loads(
-        (HERE / "independent_checker_output.json").read_text(encoding="utf-8")
-    )
-    if checker_summary != recorded_checker:
-        raise AssertionError("recorded independent-checker output changed")
+        raise AssertionError("independent calibration did not pass")
 
     control_process = run("negative_control.py")
     control = output(control_process)
     if control_process.returncode != 1:
-        raise AssertionError("asymmetric control did not exit 1")
-    if control["status"] != "REJECTED_AS_EXPECTED":
-        raise AssertionError("control was rejected for an unintended reason")
+        raise AssertionError("zero-variance control did not exit 1")
+    if control["status"] != "COUNTEREXAMPLE_REJECTED_AS_EXPECTED":
+        raise AssertionError("zero-variance control failed unexpectedly")
     recorded_control = json.loads(
         (HERE / "negative_control_output.json").read_text(encoding="utf-8")
     )
@@ -70,32 +55,47 @@ def main() -> int:
         raise AssertionError("recorded control output changed")
 
     result = {
-        "claim_id": 2,
+        "claim_id": 3,
         "verdict": "FALSIFIED",
-        "literal_quantifier": "necessary lower time for every admissible case",
         "certificate": {
             "exit_code": certificate_process.returncode,
-            "loss_smoothness": certificate["loss_smoothness"],
+            "L_Phi": certificate["L_Phi"],
             "gradient_observable_lipschitz": certificate[
                 "gradient_observable_lipschitz"
             ],
-            "strong_convexity": certificate["strong_convexity"],
-            "lambda_pl": certificate["lambda_pl"],
-            "required_time_for_every_positive_epsilon": certificate[
-                "required_time_for_every_positive_epsilon"
+            "sampler_w2_error": certificate["sampler_w2_error"],
+            "stochastic_gradient_variance": certificate[
+                "stochastic_gradient_variance"
+            ],
+            "asymptotic_lower_order": certificate[
+                "asymptotic_lower_order"
             ],
         },
         "independent_checker": {
-            key: checker_summary[key]
-            for key in checker_summary
-            if key != "status"
+            "exit_code": checker_process.returncode,
+            "epsilon_count": checker["epsilon_count"],
+            "minimum_epsilon": checker["minimum_epsilon"],
+            "largest_minimum_iterations": checker[
+                "largest_minimum_iterations"
+            ],
+            "exact_first_hit_match": checker["exact_first_hit_match"],
+            "normalized_ratio_range": checker[
+                "normalized_ratio_range"
+            ],
         },
         "negative_control": {
             "exit_code": control_process.returncode,
             "status": control["status"],
-            "initial_gradient_error": control["initial_gradient_error"],
-            "positive_first_hit_time": control["positive_first_hit_time"],
+            "first_hit_iterations": control["first_hit_iterations"],
+            "epsilon_inverse_squared_budget": control[
+                "epsilon_inverse_squared_budget"
+            ],
         },
+        "current_v3_note": (
+            "Theorem 5.2 changes the rate to epsilon^-4 with an "
+            "S-dependent step; Theorem 5.5 changes total complexity "
+            "to epsilon^-6."
+        ),
     }
     print(json.dumps(result, sort_keys=True))
     return 0
