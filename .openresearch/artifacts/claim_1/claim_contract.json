@@ -1,0 +1,27 @@
+{
+  "claim_id": 1,
+  "contract_version": 1,
+  "paper_contract": {
+    "arxiv_version": "2510.25956v1",
+    "pdf_sha256": "796d3cb25e2a9062ab4e81201daa7837c4bf615399063b0ed439c9e17e6db8d6",
+    "statement_anchor": "Sections 3.2 and B.1-B.2, Algorithms 1-6, PDF pages 3-5 and 14-15; pdftotext lines 201-341 and 945-1079",
+    "statement": "The paper gives one worst-case-distribution gradient-flow sampler, one general GF-sampler DRO outer framework, and four concrete entropy-regularized Wasserstein DRO instantiations: WGF, WFR, SVGD, and RGO."
+  },
+  "exact_scope": {
+    "algorithm_1": "sample X from rho_0, conditionally sample Y by a gradient flow, output Y",
+    "algorithm_2": "call Algorithm 1 and take a projected stochastic loss-gradient descent step",
+    "algorithm_3": "initialize particles at the nominal sample; perform the displayed noisy WGF Euler update; average particle loss-gradients in the projected outer step",
+    "algorithm_4": "perform WGF location updates plus Fisher-Rao mass updates, normalization, thresholded birth-death replacement, and a weighted projected outer step",
+    "algorithm_5": "Gaussian-deviated initialization, positive-definite-kernel score and repulsion forces, particle transport, and an averaged projected outer step",
+    "algorithm_6": "under L-smoothness and tau < 1/L, find the conditional-potential minimizer, run restricted-Gaussian rejection sampling, and take an averaged projected outer step"
+  },
+  "acceptance_criteria": [
+    "Executable source exposes Algorithms 1-6 as distinct code paths and maps every pseudocode stage to trace evidence.",
+    "An independent checker recomputes the WGF and SVGD transitions and audits WFR mass conservation, exercised birth-death, and a non-vacuous valid RGO envelope.",
+    "All algorithms run deterministically under recorded seeds on an 8-dimensional smooth non-quadratic conditional Gibbs problem.",
+    "Six distinct defect injections are rejected for omitting or reversing a required algorithmic operation.",
+    "The cumulative verifier exits nonzero if the current checker, recorded raw evidence, or expected control behavior changes."
+  ],
+  "verdict_if_all_pass": "VERIFIED",
+  "scope_note": "This verifies the structural framework-and-algorithm claim. It does not claim that finite execution proves convergence or the CIFAR-10 performance claim."
+}

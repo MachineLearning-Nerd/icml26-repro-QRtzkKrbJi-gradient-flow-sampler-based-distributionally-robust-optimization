@@ -1,0 +1,11 @@
+{
+  "run_scope": "Claim 1 plus cumulative Claims 2, 3, 4, and 6",
+  "scientific_core_estimate": 1,
+  "scientific_runtime_estimate_seconds": 30,
+  "runtime_classification": "uncertain because the fixed command cumulatively reruns five claim verifiers",
+  "selected_backend": "hf",
+  "selected_flavor": "cpu-upgrade",
+  "gpu_requested": false,
+  "fixed_command": "uv run --frozen --no-dev python -m reproduction.run_all",
+  "actual_allocation_and_runtime_location": "the immutable managed-run log and experiment description; populated after allocation"
+}
