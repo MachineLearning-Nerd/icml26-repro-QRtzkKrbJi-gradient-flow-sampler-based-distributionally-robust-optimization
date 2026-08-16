@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "repository": "MachineLearning-Nerd/icml26-gradient-flow-sampler-distributionally-robust-optimization",
+  "paper_contract": "arXiv:2510.25956v1",
+  "required_files": [
+    "README.md",
+    "STATUS.md",
+    "CLAIM_EVIDENCE.md",
+    "AUTHOR_THANK_YOU.md",
+    "ENVIRONMENT.md",
+    "SOURCE_AUDIT.md",
+    "BRANCH_AUDIT.md",
+    "CITATION.cff",
+    "claims.json",
+    "paper_2510.25956v1.pdf",
+    "paper_2510.25956v3.pdf",
+    "source/arxiv/2510.25956v1.tar",
+    "sources/paper/source_manifest.json",
+    "sources/paper/source_audit.md",
+    "sources/judge/verdict.json",
+    "published_space/reproduction/run_all.py",
+    "published_space/manifest.sha256",
+    "release/audit_candidate.py",
+    "verify_final.py"
+  ],
+  "paper_artifact_sha256": {
+    "paper_2510.25956v1.pdf": "796d3cb25e2a9062ab4e81201daa7837c4bf615399063b0ed439c9e17e6db8d6",
+    "paper_2510.25956v3.pdf": "88720453447d8affcefd3e63097c52f512d5b275766ba3e73dff9af2ca1c0f8f",
+    "source/arxiv/2510.25956v1.tar": "35a471bd60c11517db90b8e337064019c5a07faa621718aeca9800d425604488"
+  },
+  "expected_branches": [
+    "main",
+    "baseline/judged-4-12",
+    "audit/claim-1-algorithm-conformance",
+    "audit/claim-2-necessary-time",
+    "audit/claim-3-outer-rate",
+    "audit/claim-4-complexity",
+    "audit/claim-5-figure-6",
+    "audit/claim-6-half-bridge",
+    "release/evaluator-visible"
+  ],
+  "expected_claim_verdicts": {
+    "1": "VERIFIED",
+    "2": "FALSIFIED",
+    "3": "FALSIFIED",
+    "4": "BLOCKED",
+    "5": "FALSIFIED",
+    "6": "VERIFIED"
+  }
+}

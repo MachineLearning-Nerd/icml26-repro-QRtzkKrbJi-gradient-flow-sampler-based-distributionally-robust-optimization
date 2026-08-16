@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import json
+import math
 import subprocess
 import sys
 from pathlib import Path
@@ -56,8 +57,17 @@ def main() -> int:
         "minimum_proposal_kl": checker["minimum_proposal_kl"],
         "status": checker["status"],
     }
-    if checker_summary != recorded_checker:
-        raise AssertionError("recorded independent-checker output changed")
+    for key, expected in recorded_checker.items():
+        actual = checker_summary[key]
+        if isinstance(expected, float):
+            if not math.isclose(actual, expected, rel_tol=1e-12, abs_tol=1e-12):
+                raise AssertionError(
+                    f"recorded independent-checker output changed: {key}"
+                )
+        elif actual != expected:
+            raise AssertionError(
+                f"recorded independent-checker output changed: {key}"
+            )
 
     control_process = run("negative_control.py")
     control = parse_output(control_process)

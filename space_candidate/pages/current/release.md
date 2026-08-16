@@ -48,7 +48,7 @@ claim, followed by a release-only child.
 | Claim 4 | `orx/claim-4-four-route-complexity-audit` | `eb33b37c727036d98a6b78ffab80f67c98bcc591` | BLOCKED |
 | Claim 1 | `orx/claim-1-six-algorithm-conformance-suite` | `a8c56d4634f75a17cd9a8812ebd43b79c27cd228` | VERIFIED |
 | Claim 5 / winning scientific evidence | `orx/claim-5-exact-figure-6-vector-falsification` | `313c0a3d56185c5f1a74d2d6945e0dafd6445bf7` | FALSIFIED; all earlier claims rerun |
-| Release candidate | `orx/evaluator-visible-cumulative-release-candidate` | Resolved by the immutable release run | All claims plus visibility/release gates |
+| Release candidate | `orx/evaluator-visible-cumulative-release-candidate` | `04f9bbb5081236a27139b433363fe3b8ddc3490e` | PASS; all claims plus visibility/release gates |
 
 The fixed command on every node is:
 
@@ -65,8 +65,9 @@ single-process. Successful managed durations were 26, 26, 32, 32, 32, 32, and
 8.479088 seconds. One 10-second baseline preflight failed because the first
 container image lacked `uv`; no scientific result was produced, and the
 successful rerun used `ghcr.io/astral-sh/uv:python3.12-bookworm-slim`.
-Hugging Face monetary billing is not exposed by `orx`, so no unsupported cost
-amount is claimed.
+The release regression took 42 managed seconds and 14.535772 seconds in the
+cumulative verifier. Hugging Face monetary billing is not exposed by `orx`,
+so no unsupported cost amount is claimed.
 
 ## Evidence paths
 
@@ -124,7 +125,23 @@ orx logs <each completed managed run id>
 uv run --frozen --no-dev marimo check notebooks/gfs_dro_reproduction.py
 uv run --frozen --no-dev python release/build_space_release.py
 uv run --frozen --no-dev python release/audit_candidate.py
+orx exp run 7b0884c8-8299-453c-a218-d2fcb6da257e --backend hf --flavor cpu-upgrade --image ghcr.io/astral-sh/uv:python3.12-bookworm-slim
+orx exp wait 7b0884c8-8299-453c-a218-d2fcb6da257e --timeout 480
+orx logs 715d6e79-9b83-4da7-9fda-d7252ea7e0e8 --bytes 100000
+hf upload DineshAI/QRtzkKrbJi <exact-staging-directory> . --repo-type space --commit-message "Exact claim audit with cumulative evidence" --format json
+HfApi.create_commit(repo_id="DineshAI/QRtzkKrbJi", repo_type="space", parent_commit="735012f52396955c5734e8fc568adfdf2abda757", operations=<110 manifest-verified text additions>)
+hf download DineshAI/QRtzkKrbJi <110 allowlisted paths> --repo-type space --revision f519e2341f486db7539b161e1929b78a1ff3d01f --max-workers 1
+uv run --frozen --no-dev python release/audit_candidate.py --structure-only --candidate-dir <fresh-published-download>
+git merge --ff-only orx/evaluator-visible-cumulative-release-candidate
+git push origin main
+git ls-remote origin refs/heads/main refs/heads/orx/evaluator-visible-cumulative-release-candidate
 ```
+
+The generic `hf upload` attempt made no commit because its internal
+repository-creation preflight was rate-limited. Publication therefore used the
+listed direct existing-repository `HfApi.create_commit` call, with the judged
+revision as the required parent and no token printed or passed on the command
+line.
 
 The per-node exact IDs, immutable run IDs, commands, results, and actual
 durations remain in `orx exp desc`, `orx runs`, and `orx logs`; the report does
@@ -147,3 +164,9 @@ Conservative projected total: **8–10/12**. Best-supported possible total:
 Publication state at the uploaded revision: **AWAITING LIVE JUDGE**. This state
 becomes active only after the managed release regression passes and the
 revision is actually published.
+
+Published Hugging Face revision:
+`f519e2341f486db7539b161e1929b78a1ff3d01f`. Post-publication verification
+compared all 110 uploaded files with zero mismatches, repeated the canonical
+19-page traversal, preserved 17/17 judged files, and checked 37 displayed
+numbers against raw data.

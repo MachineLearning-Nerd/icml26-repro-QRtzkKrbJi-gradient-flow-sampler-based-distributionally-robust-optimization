@@ -1,0 +1,96 @@
+{
+  "schema_version": 1,
+  "paper": {
+    "title": "Gradient Flow Sampler-based Distributionally Robust Optimization",
+    "judged_arxiv": "2510.25956v1",
+    "current_arxiv": "2510.25956v3",
+    "openreview": "QRtzkKrbJi",
+    "authors": [
+      "Zusen Xu",
+      "Jia-Jie Zhu"
+    ]
+  },
+  "overall_status": "MIXED_RESULTS",
+  "evidence_release_gate": "PASSED",
+  "historical_live_score": "4/12",
+  "claims": [
+    {
+      "id": "C1",
+      "paper_target": "Unified framework and Algorithms 1-6",
+      "status": "VERIFIED_HIGH",
+      "producer": "published_space/evidence/claim_1/verifier.py plus independent_checker.py",
+      "evidence": [
+        "published_space/evidence/claim_1/claim_contract.json",
+        "published_space/evidence/claim_1/raw_results.json",
+        "published_space/evidence/claim_1/independent_checker_output.json",
+        "published_space/pages/current/claims/claim-1.md"
+      ],
+      "limitation": "Structural finite conformance does not prove convergence or CIFAR-10 performance."
+    },
+    {
+      "id": "C2",
+      "paper_target": "Proposition 1 positive necessary WGF time",
+      "status": "FALSIFIED_HIGH",
+      "producer": "published_space/evidence/claim_2/certificate.py plus independent_checker.py",
+      "evidence": [
+        "published_space/evidence/claim_2/claim_contract.json",
+        "published_space/evidence/claim_2/raw_results.json",
+        "published_space/evidence/claim_2/independent_checker_output.json",
+        "published_space/pages/current/claims/claim-2.md"
+      ],
+      "limitation": "Verdict applies to the universal necessary-time wording in v1; v3 changes the surrounding theorem."
+    },
+    {
+      "id": "C3",
+      "paper_target": "Theorem 1 O(epsilon_opt^-2) outer rate",
+      "status": "FALSIFIED_HIGH",
+      "producer": "published_space/evidence/claim_3/certificate.py plus independent_checker.py",
+      "evidence": [
+        "published_space/evidence/claim_3/claim_contract.json",
+        "published_space/evidence/claim_3/raw_results.json",
+        "published_space/evidence/claim_3/independent_checker_output.json",
+        "published_space/pages/current/claims/claim-3.md"
+      ],
+      "limitation": "Verdict applies to the v1 constant-step contract and its stated assumptions."
+    },
+    {
+      "id": "C4",
+      "paper_target": "Theorem 2 soft-O(epsilon_opt^-4) total complexity",
+      "status": "BLOCKED_LOW",
+      "producer": "published_space/evidence/claim_4/route_1_proof_audit.py through route_4_falsification.py",
+      "evidence": [
+        "published_space/evidence/claim_4/claim_contract.json",
+        "published_space/evidence/claim_4/raw_results.json",
+        "published_space/evidence/claim_4/version_diff.json",
+        "published_space/pages/current/claims/claim-4.md"
+      ],
+      "limitation": "A proof flaw or version change alone is not treated as a falsification."
+    },
+    {
+      "id": "C5",
+      "paper_target": "Strict all-setting CIFAR-10 dominance in the judged wording",
+      "status": "FALSIFIED_MEDIUM",
+      "producer": "published_space/evidence/claim_5/vector_extractor.py plus independent_checker.py",
+      "evidence": [
+        "published_space/evidence/claim_5/claim_contract.json",
+        "published_space/evidence/claim_5/raw_counterexamples.json",
+        "published_space/evidence/claim_5/official_code_audit.json",
+        "published_space/pages/current/claims/claim-5.md"
+      ],
+      "limitation": "The stronger judged wording is separated from the paper's weaker qualitative robustness prose."
+    },
+    {
+      "id": "C6",
+      "paper_target": "Lemma 1 entropy-DRO/Schrodinger half-bridge identity",
+      "status": "VERIFIED_HIGH",
+      "producer": "published_space/evidence/claim_6/certificate.py plus independent_checker.py",
+      "evidence": [
+        "published_space/evidence/claim_6/claim_contract.json",
+        "published_space/evidence/claim_6/raw_results.json",
+        "published_space/evidence/claim_6/independent_checker_output.json",
+        "published_space/pages/current/claims/claim-6.md"
+      ],
+      "limitation": "The symbolic certificate carries the functional claim; numerical checks are independent regression."
+    }
+  ]
+}

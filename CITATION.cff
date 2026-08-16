@@ -1,0 +1,30 @@
+cff-version: 1.2.0
+message: "Cite the paper for its results and this repository for the reproduction and audit artifacts."
+title: "Gradient Flow Sampler-based Distributionally Robust Optimization — Reproduction Audit"
+type: software
+authors:
+  - family-names: Jinjala
+    given-names: Dinesh
+    alias: MachineLearning-Nerd
+date-released: 2026-08-16
+repository-code: "https://github.com/MachineLearning-Nerd/icml26-gradient-flow-sampler-distributionally-robust-optimization"
+url: "https://github.com/MachineLearning-Nerd/icml26-gradient-flow-sampler-distributionally-robust-optimization"
+abstract: "Paper-first, claim-by-claim reproduction and source audit for Gradient Flow Sampler-based Distributionally Robust Optimization."
+keywords:
+  - ICML 2026
+  - distributionally robust optimization
+  - gradient flows
+  - reproducibility
+  - claim audit
+references:
+  - type: article
+    authors:
+      - family-names: Xu
+        given-names: Zusen
+      - family-names: Zhu
+        given-names: Jia-Jie
+    title: "Gradient Flow Sampler-based Distributionally Robust Optimization"
+    year: 2025
+    journal: "arXiv preprint arXiv:2510.25956"
+    doi: "10.48550/arXiv.2510.25956"
+    url: "https://arxiv.org/abs/2510.25956"
